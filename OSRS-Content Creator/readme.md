@@ -72,7 +72,3 @@ Edit the text inside the `.info-grid` container to display your current max tota
 ## 📜 Disclaimer
 
 *Old School RuneScape is a registered trademark of Jagex Ltd. This landing page is a community fan project and is not affiliated with or endorsed by Jagex.*
-
-```
-
-```
