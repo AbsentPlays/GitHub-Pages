@@ -13,6 +13,10 @@ A lightweight, single-page landing website built for **Cosmic Order**, an Old Sc
 * **Responsive Layout:** Adaptive styling with breakpoint handling for desktop and mobile devices.
 
 ---
+## 📸 What it looks like
+![CO Preview](images/C0Preview.png)
+
+---
 
 ## 📂 File Structure
 
