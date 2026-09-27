@@ -64,6 +64,10 @@ Edit the text inside the `.info-grid` container to display your current max tota
 * **Lightweight**: Zero external JS dependencies—built purely with vanilla HTML and CSS.
 
 ---
+## 📸 What it looks like
+![OSRSCPreview](images/OSRSCPreview.png)
+
+---
 
 ## 📜 Disclaimer
 
