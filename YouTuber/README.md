@@ -1,4 +1,4 @@
-# Portfolio & Content Creator Landing Page
+# YouTuber Content Creator Landing Page
 
 A sleek, responsive dark-mode portfolio landing page built for tech content creators, developers, and streamers. Features dynamic YouTube channel statistics using the YouTube Data API v3, animated counters, smooth scroll animations, and responsive card layouts.
 
