@@ -15,6 +15,13 @@ A sleek, responsive dark-mode portfolio landing page built for tech content crea
 
 ---
 
+## What it looks like
+![YT Preview](images/YTPreview.png)
+
+---
+
+---
+
 ## Directory Structure
 
 ```text
