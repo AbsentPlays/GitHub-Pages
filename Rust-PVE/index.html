@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust PvE Absent | Pure Survival & Community</title>
+    <style>
+        :root {
+            --bg-color: #0e0f12;
+            --card-bg: #16181d;
+            --accent-color: #ce422b; /* Rust Orange */
+            --accent-hover: #e0533c;
+            --text-main: #f0f2f5;
+            --text-muted: #9ba1b0;
+            --border-color: #262930;
+            --success: #2ecc71;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(rgba(14, 15, 18, 0.75), rgba(14, 15, 18, 0.95)),
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s ease, transform 0.1s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .status-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        .status-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+
+        .ip-box {
+            background: var(--bg-color);
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px dashed var(--border-color);
+            font-family: monospace;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rust PvE Absent</h1>
+        <p>A relaxed, player-versus-environment Rust experience focusing on survival, community events, and custom monuments.</p>
+        <div class="cta-buttons">
+            <a href="steam://connect/YOUR_SERVER_IP:28015" class="btn">Direct Connect</a>
+            <a href="https://discord.gg/YOUR_DISCORD_LINK" target="_blank" class="btn btn-secondary">Join Discord</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Live Status Bar -->
+        <div class="status-card">
+            <div class="status-info">
+                <h3>Server Status</h3>
+                <div class="status-badge">
+                    <span class="pulse-dot"></span> Online & Accepting Players
+                </div>
+            </div>
+            <div>
+                <small style="color: var(--text-muted); display: block; margin-bottom: 4px;">Click IP to copy:</small>
+                <div class="ip-box" id="ip-box" onclick="copyIP()">client.connect YOUR_SERVER_IP:28015</div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid">
+            <div class="card">
+                <h2>Server Features</h2>
+                <ul>
+                    <li><strong>No Raiding / No PvP:</strong> Safe building environment.</li>
+                    <li><strong>Custom Monuments:</strong> Unique PvE challenges & bosses.</li>
+                    <li><strong>2x Gathering Rates:</strong> Standard resources are slightly boosted.</li>
+                    <li><strong>Backpacks & QoL:</strong> Extra storage space on death.</li>
+                    <li><strong>Purge Event:</strong> Optional PvP active 24 hours prior to map wipe.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Server Rules</h2>
+                <ul>
+                    <li>Respect all players; zero tolerance for toxicity or hate speech.</li>
+                    <li>No raiding or stealing from other players' bases.</li>
+                    <li>Do not lock off or hoard public monuments.</li>
+                    <li>No cheating, exploiting, or taking advantage of bugs.</li>
+                    <li>Limit base sizes to prevent server performance issues.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="card" style="margin-bottom: 40px;">
+            <h2>Wipe Schedule</h2>
+            <p><strong>Map Wipe:</strong> Every 2 weeks on Thursday at 2:00 PM EST.</p>
+            <p><strong>BP (Blueprints) Wipe:</strong> First Thursday of every month (Monthly Force Wipe).</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rust PvE Absent Community. Not affiliated with Facepunch Studios.</p>
+    </footer>
+
+    <script>
+        function copyIP() {
+            const ipText = document.getElementById('ip-box').innerText;
+            navigator.clipboard.writeText(ipText).then(() => {
+                alert('Copied to clipboard: ' + ipText);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
