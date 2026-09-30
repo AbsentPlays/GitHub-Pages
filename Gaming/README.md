@@ -1,6 +1,8 @@
 # Gaming Portfolio
+HTML portfolio page with an 8-bit retro arcade look
 
-
+## 📸 What it looks like
+![CO Preview](images/GamingPreview.png)
 
 
 ```markdown
