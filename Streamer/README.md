@@ -22,5 +22,34 @@ This landing page serves as a central showcase for live streams, social handles,
 
 ---
 
-## License
-This project is open source and available under the MIT License.
+## 🚀 Deployment Instructions (GitHub Pages)
+1. Fork or Clone this repository to your GitHub account.
+2. Update the profile details, links, and text inside index.html.
+3. Add your profile picture as images/absent.png.
+4. Go to your repository settings on GitHub:
+* Navigate to Settings > Pages.
+* Under Build and deployment, set Source to Deploy from a branch.
+* Select the main branch and / (root) directory, then click Save.
+5. Your portfolio site will be live at:https://<your-username>.github.io/<repository-name>/
+  
+---
+
+## 🛠️ Customization Guide
+
+1. Profile Information
+Edit the <header> block in index.html to change your streamer name, bio, and category tags:
+
+
+```<h1 class="streamer-name">YourName</h1> <p class="streamer-tagline">Variety Gaming & Community Streams</p>```
+
+2. Social Media Links
+Update the href values inside .socials-grid:
+``<a href="[https://twitch.tv/YOUR_HANDLE](https://twitch.tv/YOUR_HANDLE)" target="_blank" class="social-card twitch">``
+
+4. Stream Schedule
+Update stream times and days inside the .schedule-item elements in index.html.
+
+---
+
+## 📜 License
+This project is open-source under the MIT License. Feel free to modify and adapt it for your own stream landing page!
