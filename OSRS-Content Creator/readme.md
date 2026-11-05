@@ -1,6 +1,6 @@
-# ⚔️ Absentplays | OSRS Content Creator Portfolio & Link Hub
+# ⚔️ OSRS Content Creator Portfolio & Link Hub
 
-Welcome to the repository for **Absentplays**' official Old School RuneScape (OSRS) creator landing page, hosted with **GitHub Pages**.
+Welcome to the repository for **OSRS Content Creator**' official Old School RuneScape (OSRS) creator landing page, hosted with **GitHub Pages**.
 
 This central hub highlights stream schedules, highscore stats, social links, latest video guides, and an interactive OSRS sound & loot drop engine.
 
