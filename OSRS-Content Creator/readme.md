@@ -18,7 +18,7 @@ This central hub highlights stream schedules, highscore stats, social links, lat
 ---
 
 ## 📸 Preview
-![OSRSCPreview](images/OSRSCPreview.png)
+![OSRSCPreview](images/OSRSPreview.png)
 
 ---
 
