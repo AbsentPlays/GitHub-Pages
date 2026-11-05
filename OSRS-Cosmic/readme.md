@@ -18,18 +18,6 @@ A lightweight, single-page landing website built for **Cosmic Order**, an Old Sc
 
 ---
 
-## 📂 File Structure
-
-```text
-.
-├── index.html               # Main single-page website file
-├── images/
-│   └── cosmic-banner.png    # Hero section banner graphic (referenced in index.html)
-└── README.md                # Project documentation
-
-```
-
----
 
 ## 🚀 Quick Start & Customization
 

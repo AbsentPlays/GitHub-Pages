@@ -20,19 +20,6 @@ A sleek, responsive dark-mode portfolio landing page built for tech content crea
 
 ---
 
----
-
-## Directory Structure
-
-```text
-.
-├── index.html
-└── images/
-    └── Absent.png       # Profile / avatar image
-
-```
-
----
 
 ## Quick Start
 
