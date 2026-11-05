@@ -17,6 +17,11 @@ This central hub highlights stream schedules, highscore stats, social links, lat
 
 ---
 
+## 📸 Preview
+![OSRSCPreview](images/OSRSCPreview.png)
+
+---
+
 ## 🚀 Quick Setup & Deployment
 
 1. **Fork or Clone this repository** to your GitHub account.
