@@ -3,82 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gielinor Legend | OSRS Content Creator</title>
-    <!-- OSRS Pixel Font (Press Start 2P) -->
+    <title>Absentplays | OSRS Content Creator</title>
+    <!-- OSRS Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- External Custom Stylesheet -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Sound Toggle -->
+    <button class="sound-toggle" id="soundBtn" onclick="toggleAudio()">
+        <i class="fa-solid fa-volume-high"></i> SFX: ON
+    </button>
+
     <!-- Twitch Live Status Banner -->
     <div class="live-banner">
         <div class="pulse-dot"></div>
-        <span>LIVE NOW: Grinding the New Boss in OSRS!</span>
+        <span>LIVE NOW: Grinding Endgame PvM & Raids!</span>
     </div>
 
     <div class="container">
         
-        <!-- Header / Bio Section -->
+        <!-- Header Section -->
         <header class="profile-header">
-            <div class="avatar-container">
-                <!-- Replace with your actual profile picture URL -->
-                <img src="images/absent.png" alt="Profile Picture" class="avatar">
+            <div class="avatar-container" onclick="playLevelUpSound()">
+                <img src="images/absent.png" alt="Absentplays Profile Picture" class="avatar" onerror="this.src='https://via.placeholder.com/120/2b2219/ffb400?text=Absent'">
                 <div class="level-badge">LVL 126</div>
             </div>
             
-            <h1 class="creator-title">YourName</h1>
+            <h1 class="creator-title">Absentplays</h1>
             <p class="subtitle">Ironman Enthusiast & High-Level PvM Guide Creator</p>
             
             <p class="bio">
-                Hey! I'm an Old School RuneScape content creator focusing on endgame PvM guides, Hardcore Ironman progression, and entertaining community streams. Catch me live 4 days a week on Twitch!
+                Welcome to my OSRS hub! I create high-level endgame PvM guides, document Hardcore Ironman progression, and host community bossing streams. Click the avatar above or loot chest below for interactive sound effects!
             </p>
+
+            <div class="quick-tags">
+                <span class="tag"><i class="fa-solid fa-dragon"></i> Endgame PvM</span>
+                <span class="tag"><i class="fa-solid fa-shield-halved"></i> HCIM Mode</span>
+                <span class="tag"><i class="fa-solid fa-crown"></i> 2277 Maxed</span>
+            </div>
         </header>
 
-        <!-- Social Media Links -->
+        <!-- Social Links -->
         <section class="socials-grid">
-            <a href="https://twitch.tv" target="_blank" class="social-card twitch">
+            <a href="https://twitch.tv" target="_blank" class="social-card twitch" onclick="playClickSound()">
                 <i class="fa-brands fa-twitch"></i>
                 <div class="social-info">
                     <div class="platform">Twitch</div>
-                    <div class="handle">twitch.tv/yourname</div>
+                    <div class="handle">twitch.tv/absentplays</div>
                 </div>
             </a>
 
-            <a href="https://youtube.com" target="_blank" class="social-card youtube">
+            <a href="https://youtube.com" target="_blank" class="social-card youtube" onclick="playClickSound()">
                 <i class="fa-brands fa-youtube"></i>
                 <div class="social-info">
                     <div class="platform">YouTube</div>
-                    <div class="handle">YouTube / YourName</div>
+                    <div class="handle">YouTube / Absentplays</div>
                 </div>
             </a>
 
-            <a href="https://twitter.com" target="_blank" class="social-card twitter">
+            <a href="https://twitter.com" target="_blank" class="social-card twitter" onclick="playClickSound()">
                 <i class="fa-brands fa-x-twitter"></i>
                 <div class="social-info">
                     <div class="platform">X / Twitter</div>
-                    <div class="handle">@YourNameOSRS</div>
+                    <div class="handle">@AbsentplaysOSRS</div>
                 </div>
             </a>
 
-            <a href="https://discord.gg" target="_blank" class="social-card discord">
+            <a href="https://discord.gg" target="_blank" class="social-card discord" onclick="playClickSound()">
                 <i class="fa-brands fa-discord"></i>
                 <div class="social-info">
                     <div class="platform">Discord</div>
-                    <div class="handle">Join the Community</div>
+                    <div class="handle">Join Community</div>
                 </div>
             </a>
         </section>
 
-        <!-- Info Grid (Account Stats & Stream Schedule) -->
+        <!-- Stats & Schedule -->
         <div class="info-grid">
             
             <!-- Account Stats Panel -->
             <div class="panel">
                 <h2 class="panel-title">
-                    <i class="fa-solid fa-trophy"></i> Account Stats
+                    <span><i class="fa-solid fa-trophy"></i> Account Stats</span>
+                    <i class="fa-solid fa-bars-staggered"></i>
                 </h2>
                 <ul class="stat-list">
                     <li class="stat-item">
@@ -87,15 +98,19 @@
                     </li>
                     <li class="stat-item">
                         <span class="stat-label">HCIM Status</span>
-                        <span class="stat-value">Alive (2100+ Total)</span>
+                        <span class="stat-value">Alive (2140 Total)</span>
                     </li>
                     <li class="stat-item">
                         <span class="stat-label">Favorite Skill</span>
-                        <span class="stat-value">Slayer</span>
+                        <span class="stat-value">Slayer (25M XP)</span>
                     </li>
                     <li class="stat-item">
                         <span class="stat-label">Raid KC</span>
-                        <span class="stat-value">1,500+ CoX / ToA</span>
+                        <span class="stat-value">1,850+ CoX / ToA</span>
+                    </li>
+                    <li class="stat-item">
+                        <span class="stat-label">Collection Log</span>
+                        <span class="stat-value">890 / 1500</span>
                     </li>
                 </ul>
             </div>
@@ -103,30 +118,182 @@
             <!-- Streaming Schedule Panel -->
             <div class="panel">
                 <h2 class="panel-title">
-                    <i class="fa-solid fa-calendar-days"></i> Stream Schedule
+                    <span><i class="fa-solid fa-calendar-days"></i> Stream Schedule</span>
+                    <i class="fa-solid fa-clock"></i>
                 </h2>
                 <div class="schedule-day">
-                    <div class="day-name">Mon / Wed / Fri</div>
-                    <div class="day-time">6:00 PM EST – PvM Progress & Raids</div>
+                    <span class="day-name">Mon / Wed / Fri</span>
+                    <span class="day-time">6:00 PM EST – PvM Progress</span>
                 </div>
                 <div class="schedule-day">
-                    <div class="day-name">Saturday</div>
-                    <div class="day-time">2:00 PM EST – Viewer Bossing & Community Games</div>
+                    <span class="day-name">Saturday</span>
+                    <span class="day-time">2:00 PM EST – Viewer Raids</span>
                 </div>
                 <div class="schedule-day">
-                    <div class="day-name">Tue / Thu / Sun</div>
-                    <div class="day-time">Off (Video Editing Days)</div>
+                    <span class="day-name">Tue / Thu / Sun</span>
+                    <span class="day-time">Off (Video Editing)</span>
                 </div>
             </div>
 
         </div>
 
+        <!-- Interactive Raid Drop Simulator -->
+        <section class="panel">
+            <h2 class="panel-title">
+                <span><i class="fa-solid fa-gem"></i> Interactive Raid Chest Simulator</span>
+            </h2>
+            <div class="sim-container">
+                <button class="sim-btn" onclick="openRaidChest()">
+                    <i class="fa-solid fa-box-open"></i> OPEN RAID CHEST
+                </button>
+                <div class="chat-box" id="simChat">
+                    Click the chest to roll for rare unique loot!
+                </div>
+                <div class="loot-counters">
+                    <span>Chests Opened: <strong id="kcCount" style="color:#fff;">0</strong></span>
+                    <span>Purples: <strong id="purpleCount" style="color:var(--osrs-gold);">0</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Videos Showcase -->
+        <section class="panel">
+            <h2 class="panel-title">
+                <span><i class="fa-solid fa-video"></i> Featured Guides & Highlights</span>
+            </h2>
+            <div class="video-grid">
+                
+                <a href="https://youtube.com" target="_blank" class="video-card" onclick="playClickSound()">
+                    <div class="video-thumb">
+                        <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Ultimate Tombs of Amascut 500 Raid Guide</div>
+                        <div class="video-meta">YouTube • 45K views</div>
+                    </div>
+                </a>
+
+                <a href="https://youtube.com" target="_blank" class="video-card" onclick="playClickSound()">
+                    <div class="video-thumb">
+                        <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">HCIM Ep. 42: Solo Corporeal Beast Attempt</div>
+                        <div class="video-meta">YouTube • 32K views</div>
+                    </div>
+                </a>
+
+                <a href="https://youtube.com" target="_blank" class="video-card" onclick="playClickSound()">
+                    <div class="video-thumb">
+                        <div class="play-icon"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Top 10 Essential PvM Plugins for Runelite</div>
+                        <div class="video-meta">YouTube • 88K views</div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
     </div>
 
     <footer>
-        <p>OldSchool RuneScape is a registered trademark of Jagex Ltd.</p>
-        <p>Hosted with GitHub Pages</p>
+        <p>Old School RuneScape is a registered trademark of Jagex Ltd.</p>
+        <p>Maintained by Absentplays • Hosted with GitHub Pages</p>
     </footer>
 
+    <!-- Audio & Interactive Script -->
+    <script>
+        let sfxEnabled = true;
+        let audioCtx = null;
+        let kc = 0;
+        let purples = 0;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function toggleAudio() {
+            sfxEnabled = !sfxEnabled;
+            const btn = document.getElementById('soundBtn');
+            if (sfxEnabled) {
+                btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> SFX: ON';
+                btn.style.color = 'var(--osrs-gold)';
+            } else {
+                btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> SFX: OFF';
+                btn.style.color = 'var(--text-muted)';
+            }
+        }
+
+        function playTone(freq, type, duration, delay = 0) {
+            if (!sfxEnabled) return;
+            initAudio();
+            setTimeout(() => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            }, delay * 1000);
+        }
+
+        function playClickSound() {
+            playTone(800, 'square', 0.05);
+        }
+
+        function playLevelUpSound() {
+            if (!sfxEnabled) return;
+            playTone(400, 'triangle', 0.12, 0);
+            playTone(533, 'triangle', 0.12, 0.1);
+            playTone(600, 'triangle', 0.12, 0.2);
+            playTone(800, 'triangle', 0.35, 0.3);
+        }
+
+        function playLootSound() {
+            if (!sfxEnabled) return;
+            playTone(523, 'sine', 0.1, 0);
+            playTone(659, 'sine', 0.1, 0.08);
+            playTone(783, 'sine', 0.1, 0.16);
+            playTone(1046, 'sine', 0.3, 0.24);
+        }
+
+        function openRaidChest() {
+            kc++;
+            document.getElementById('kcCount').innerText = kc;
+
+            const roll = Math.random();
+            const chatBox = document.getElementById('simChat');
+
+            if (roll < 0.12) {
+                purples++;
+                document.getElementById('purpleCount').innerText = purples;
+                playLootSound();
+
+                const items = [
+                    'Tumeken\'s Shadow',
+                    'Twisted Bow',
+                    'Scythe of Vitur',
+                    'Elidinis\' Ward',
+                    'Ancestral Robe Top'
+                ];
+                const item = items[Math.floor(Math.random() * items.length)];
+                chatBox.innerHTML = `<span style="color:#a970ff; font-weight:bold;">★ Special Loot: Absentplays received: ${item}! ★</span>`;
+            } else if (roll < 0.5) {
+                playClickSound();
+                chatBox.innerHTML = `<span style="color:#ffff00;">You found: Dragon Coal x250 & Dragon Ore x120</span>`;
+            } else {
+                playClickSound();
+                chatBox.innerHTML = `<span style="color:#e6dfd3;">You found: Rune Scimitar x2 & Coins x45,000</span>`;
+            }
+        }
+    </script>
 </body>
 </html>

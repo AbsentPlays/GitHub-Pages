@@ -1,10 +1,13 @@
 :root {
     --osrs-gold: #ffb400;
     --osrs-yellow: #ffff00;
-    --osrs-bg-dark: #12100d;
-    --osrs-box-bg: #2d261e;
-    --osrs-box-border: #4a3e31;
-    --osrs-gold-border: #b8860b;
+    --osrs-red: #ef4444;
+    --osrs-green: #00ff00;
+    --osrs-bg-dark: #0f0d0b;
+    --osrs-box-bg: #2b2219;
+    --osrs-box-inner: #1b1510;
+    --osrs-border-gold: #b8860b;
+    --osrs-border-dark: #413325;
     --text-light: #e6dfd3;
     --text-muted: #a39580;
 }
@@ -20,33 +23,59 @@ body {
     color: var(--text-light);
     font-family: 'Inter', sans-serif;
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 180, 0, 0.08) 0%, transparent 70%),
-        linear-gradient(to bottom, rgba(18, 16, 13, 0.85), rgba(18, 16, 13, 0.98));
+        radial-gradient(circle at 50% 0%, rgba(255, 180, 0, 0.12) 0%, transparent 70%),
+        linear-gradient(to bottom, rgba(15, 13, 11, 0.9), rgba(15, 13, 11, 0.98));
     min-height: 100vh;
     line-height: 1.6;
 }
 
-/* Top Bar Indicator */
+/* Audio Control Button */
+.sound-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--osrs-box-bg);
+    border: 2px solid var(--osrs-border-gold);
+    color: var(--osrs-gold);
+    padding: 10px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    transition: all 0.2s ease;
+}
+
+.sound-toggle:hover {
+    transform: scale(1.05);
+    background: #3a2e22;
+}
+
+/* Live Banner */
 .live-banner {
     background: rgba(239, 68, 68, 0.15);
     border-bottom: 1px solid rgba(239, 68, 68, 0.3);
     color: #f87171;
     text-align: center;
-    padding: 8px 16px;
+    padding: 10px 16px;
     font-size: 0.85rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #ef4444;
+    width: 10px;
+    height: 10px;
+    background-color: var(--osrs-red);
     border-radius: 50%;
-    box-shadow: 0 0 8px #ef4444;
+    box-shadow: 0 0 10px var(--osrs-red);
     animation: pulse 1.5s infinite;
 }
 
@@ -56,23 +85,23 @@ body {
     100% { opacity: 1; transform: scale(1); }
 }
 
-/* Container */
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 30px 20px 60px;
 }
 
-/* Header / Profile Section */
+/* Header */
 .profile-header {
     background: var(--osrs-box-bg);
-    border: 3px solid var(--osrs-gold-border);
-    border-radius: 8px;
-    padding: 32px;
+    border: 3px solid var(--osrs-border-gold);
+    border-radius: 10px;
+    padding: 36px 24px;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0, 0, 0, 0.8);
     margin-bottom: 30px;
     position: relative;
+    overflow: hidden;
 }
 
 .avatar-container {
@@ -80,6 +109,7 @@ body {
     width: 120px;
     height: 120px;
     margin: 0 auto 20px;
+    cursor: pointer;
 }
 
 .avatar {
@@ -88,7 +118,12 @@ body {
     border-radius: 50%;
     border: 3px solid var(--osrs-gold);
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease;
+}
+
+.avatar-container:hover .avatar {
+    transform: rotate(5deg) scale(1.05);
 }
 
 .level-badge {
@@ -108,26 +143,42 @@ body {
 .creator-title {
     font-family: 'Press Start 2P', cursive;
     color: var(--osrs-gold);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 0px #000;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    text-shadow: 3px 3px 0px #000;
 }
 
 .subtitle {
     color: var(--osrs-yellow);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 16px;
 }
 
 .bio {
     color: var(--text-light);
-    max-width: 600px;
-    margin: 0 auto 20px;
+    max-width: 650px;
+    margin: 0 auto 24px;
     font-size: 0.95rem;
 }
 
-/* Social Links Grid */
+.quick-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: var(--osrs-box-inner);
+    border: 1px solid var(--osrs-border-dark);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--osrs-gold);
+}
+
+/* Grid Layouts */
 .socials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -137,12 +188,12 @@ body {
 
 .social-card {
     background: var(--osrs-box-bg);
-    border: 2px solid var(--osrs-box-border);
-    border-radius: 6px;
+    border: 2px solid var(--osrs-border-dark);
+    border-radius: 8px;
     padding: 16px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     color: var(--text-light);
     text-decoration: none;
     transition: all 0.2s ease;
@@ -150,12 +201,12 @@ body {
 
 .social-card:hover {
     border-color: var(--osrs-gold);
-    transform: translateY(-2px);
-    background: #362e24;
+    transform: translateY(-3px);
+    background: #382c20;
 }
 
 .social-card i {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .social-card.twitch i { color: #a970ff; }
@@ -167,7 +218,6 @@ body {
     font-size: 0.75rem;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .social-info .handle {
@@ -175,7 +225,29 @@ body {
     color: #fff;
 }
 
-/* Stats & Info Section */
+/* Content Panels */
+.panel {
+    background: var(--osrs-box-bg);
+    border: 2px solid var(--osrs-border-dark);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+    margin-bottom: 30px;
+}
+
+.panel-title {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--osrs-gold);
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--osrs-border-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Highscores & Stats */
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -184,29 +256,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.panel {
-    background: var(--osrs-box-bg);
-    border: 2px solid var(--osrs-box-border);
-    border-radius: 6px;
-    padding: 20px;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-}
-
-.panel-title {
-    font-family: 'Press Start 2P', cursive;
-    color: var(--osrs-gold);
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--osrs-box-border);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    .info-grid { grid-template-columns: 1fr; }
 }
 
 .stat-list {
@@ -216,7 +266,7 @@ body {
 .stat-item {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 9px 0;
     border-bottom: 1px dotted rgba(255,255,255,0.1);
     font-size: 0.9rem;
 }
@@ -234,29 +284,146 @@ body {
     font-weight: 600;
 }
 
-/* Schedule / Content Section */
+/* Interactive Drop Simulator */
+.sim-container {
+    background: var(--osrs-box-inner);
+    border: 2px solid var(--osrs-border-dark);
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+}
+
+.sim-btn {
+    background: linear-gradient(to bottom, #4a3a28, #2d2318);
+    border: 2px solid var(--osrs-gold);
+    color: var(--osrs-gold);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 15px;
+}
+
+.sim-btn:hover {
+    background: var(--osrs-gold);
+    color: #000;
+    transform: scale(1.02);
+}
+
+.sim-btn:active {
+    transform: scale(0.98);
+}
+
+.chat-box {
+    background: #000;
+    border: 1px solid var(--osrs-border-dark);
+    padding: 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.88rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--osrs-yellow);
+}
+
+.loot-counters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Stream Schedule */
 .schedule-day {
-    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .day-name {
     font-weight: 600;
     color: #fff;
-    font-size: 0.9rem;
 }
 
 .day-time {
-    font-size: 0.85rem;
+    color: var(--osrs-yellow);
+    font-size: 0.9rem;
+}
+
+/* Video Showcase Cards */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.video-card {
+    background: var(--osrs-box-inner);
+    border: 1px solid var(--osrs-border-dark);
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+}
+
+.video-card:hover {
+    border-color: var(--osrs-gold);
+    transform: translateY(-3px);
+}
+
+.video-thumb {
+    width: 100%;
+    height: 140px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--osrs-gold);
+    font-size: 2rem;
+    position: relative;
+}
+
+.play-icon {
+    background: rgba(0,0,0,0.7);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--osrs-gold);
+}
+
+.video-info {
+    padding: 14px;
+}
+
+.video-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.video-meta {
+    font-size: 0.78rem;
     color: var(--text-muted);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     color: var(--text-muted);
     font-size: 0.8rem;
-    border-top: 1px solid var(--osrs-box-border);
+    border-top: 1px solid var(--osrs-border-dark);
 }
 
 footer a {
