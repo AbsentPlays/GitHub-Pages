@@ -54,11 +54,6 @@ All interactive sound synthesizers and drop table probabilities are defined at t
 
 ---
 
-## 📸 Preview
-![OSRSCPreview](images/OSRSCPreview.png)
-
----
-
 ## 📜 Disclaimer
 
 *Old School RuneScape is a registered trademark of Jagex Ltd. This landing page is an unofficial fan project and is not affiliated with or endorsed by Jagex.*
