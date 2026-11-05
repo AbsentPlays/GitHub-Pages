@@ -46,3 +46,8 @@ Click the **Direct Connect** button on our website, or click here:
 3. Type or paste:
    ```text
    client.connect YOUR_SERVER_IP:28015
+
+---
+
+## License
+This project is open source and available under the MIT License.

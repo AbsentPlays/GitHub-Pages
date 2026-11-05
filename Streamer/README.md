@@ -23,5 +23,4 @@ This landing page serves as a central showcase for live streams, social handles,
 ---
 
 ## License
-
 This project is open source and available under the MIT License.

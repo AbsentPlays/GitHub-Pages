@@ -56,3 +56,7 @@ HTML portfolio page with an 8-bit retro arcade look
 Replace `yourusername` and `Your Name` with your real details to complete setup.
 
 ```
+---
+
+## License
+This project is open source and available under the MIT License.
